@@ -15,10 +15,14 @@ class PurchaseOrderListCreate(generics.ListCreateAPIView):
     serializer_class = PurchaseOrderSerializer
 
 class PurchaseOrderRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
     queryset = PurchaseOrder.objects.all()
     serializer_class = PurchaseOrderSerializer
 
 class PurchaseOrderAcknowledge(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
     queryset = PurchaseOrder.objects.all()
     serializer_class = PurchaseOrderSerializer
 

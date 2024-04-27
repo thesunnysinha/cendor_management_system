@@ -5,16 +5,25 @@ from purchaseOrders.models import PurchaseOrder
 from .models import Vendor
 from .serializers import VendorSerializer, VendorPerformanceSerializer
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 
 class VendorListCreate(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
     queryset = Vendor.objects.all()
     serializer_class = VendorSerializer
 
 class VendorRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
     queryset = Vendor.objects.all()
     serializer_class = VendorSerializer
 
 class VendorPerformance(generics.RetrieveAPIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
     queryset = Vendor.objects.all()
     serializer_class = VendorPerformanceSerializer
 

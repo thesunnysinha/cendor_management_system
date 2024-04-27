@@ -45,4 +45,5 @@ To run the test suite and ensure the correctness of the APIs, follow these steps
 
 1. Ensure that your development environment is set up correctly by following the steps mentioned in the "Create Virtual Environment and Install Dependencies" section.
 2. Navigate to the `backend` directory of the project.
-3. Run the command `python manage.py test` to execute all the test cases.
+3. Run the command `python manage.py test vendors` to execute vendors test cases.
+4. Run the command `python manage.py test purchaseOrders` to execute purchaseOrders test cases.
