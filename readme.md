@@ -32,10 +32,17 @@ To manually run the project, follow these steps:
 4. If needed, you can delete `__pycache__` directories and migration files using `python manage.py deletepycachemigrations`.
 5. To create a `.env` file, copy the `.envExample` file using the command `cp .envExample .env`. This will create an exact copy of `.envExample` named `.env`.
 
-
 ### Using the Provided Script(Linux Only)
 
 Alternatively, you can run the server using the provided script:
 
 1. Grant execute permission to the script with `chmod +x runserver.sh`.
 2. Execute the script with `./runserver.sh`.
+
+## Running the Test Suite
+
+To run the test suite and ensure the correctness of the APIs, follow these steps:
+
+1. Ensure that your development environment is set up correctly by following the steps mentioned in the "Create Virtual Environment and Install Dependencies" section.
+2. Navigate to the `backend` directory of the project.
+3. Run the command `python manage.py test` to execute all the test cases.
