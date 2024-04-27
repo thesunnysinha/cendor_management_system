@@ -20,7 +20,6 @@ class VendorPerformance(generics.RetrieveAPIView):
 
     def get(self, request, *args, **kwargs):
         vendor = self.get_object()
-        print(vendor)
         performance_data = self.calculate_performance_metrics(vendor)
         serializer = self.get_serializer(performance_data)
         return Response(serializer.data)
